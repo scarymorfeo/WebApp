@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+    <definition name="home" extends="template" >
+        <put-attribute name="areaTrabajo" value="/WEB-INF/jsp/webApp/home.jsp" />
+    </definition>
+
+    <definition name="busqueda" extends="template" >
+        <put-attribute name="areaTrabajo" value="/WEB-INF/jsp/webApp/busqueda.jsp" />
+    </definition>
+
+     <definition name="autenticacion" template="/WEB-INF/jsp/webApp/autenticacion.jsp">
+    </definition>
+
+</tiles-definitions>
