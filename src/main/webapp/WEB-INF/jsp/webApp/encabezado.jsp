@@ -12,7 +12,7 @@
 
 			<a class="navbar-brand" href="#home.htm"><img
 				src="${pageContext.request.contextPath}/resources/img/icono.png"
-				alt="" style="width: 60px; height: 60px;">Herramientas</a>
+				alt="" style="width: 60px; height: 60px;">ONLINE SEARCH - IIR</a>
 
 			<div class="col-sm-12 mainmenu_wrap">
 				<div class="main-menu-icon visible-xs">

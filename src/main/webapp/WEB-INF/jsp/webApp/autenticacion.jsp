@@ -30,8 +30,8 @@
                         <img src="${pageContext.request.contextPath}/resources/img/letrero_tools.png" alt="">
                         <input type="text" class="form-control" required placeholder="Correo" autofocus name="usuario"/>
                         <input type="password" class="form-control" required placeholder="Contrase&ntilde;a" name="contrasena"/>
-                        <button class="btn btn-lg btn-danger btn-block" type="submit" data-loading-text="Iniciando sesi&oacute;n...">Iniciar sesi&oacute;n</button>
-                        <p>© Copyright 2016.<a target="_blank" href="#"><img src="${pageContext.request.contextPath}/resources/img/logo.png" border="0">Santander</a></p>
+                        <button class="btn btn-lg btn btn-primary btn-block" type="submit" data-loading-text="Iniciando sesi&oacute;n...">Iniciar sesi&oacute;n</button>
+                        <p>© Copyright 2017.<a target="_blank" href="#"><img src="${pageContext.request.contextPath}/resources/img/logo.png" border="0"style="width: 150px;"></a></p>
                     </form>
                     <c:if test="${not empty mensajeError}">
                         <div class="alert alert-danger alert-dismissable" >

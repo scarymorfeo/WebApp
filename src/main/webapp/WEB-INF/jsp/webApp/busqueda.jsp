@@ -46,7 +46,7 @@
 
 										<p class="contact-form-submit text-center vertical-margin-20">
 											
-											<button type="button" class="theme_btn" id="btnBuscar"
+											<button type="button" class="btn btn-primary" id="btnBuscar"
 												name="btnBuscar">
 											    <i class="fa fa-search" aria-hidden="true"></i> Buscar
 
@@ -96,9 +96,9 @@
 
 				<div class="col-sm-6">
 					<p>
-						&copy; Copyright 2016.<a href="#" target="_blank"><img
+						&copy; Copyright 2017.<a href="#" target="_blank"><img
 							src="${pageContext.request.contextPath}/resources/img/flama.png"
-							style="width: 22px;" border="0">Santander</a>
+							style="width: 100px;" border="0"></a>
 					</p>
 				</div>
 

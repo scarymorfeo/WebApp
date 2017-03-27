@@ -10,9 +10,9 @@
         http://www.springframework.org/schema/jee 
         http://www.springframework.org/schema/jee/spring-jee.xsd">
     
-    <context:component-scan base-package="com.santander.app.appstatus.service, 
-        com.santander.app.admintools.service, 
-        com.santander.app.service" />
+    <context:component-scan base-package="com.infomg.app.appstatus.service, 
+        com.infomg.app.admintools.service, 
+        com.infomg.app.service" />
     
     <!--    <bean id="mailSender"
           class="org.springframework.mail.javamail.JavaMailSenderImpl">

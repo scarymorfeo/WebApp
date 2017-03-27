@@ -4,7 +4,7 @@
     Author     : hector.hurtado
 --%>
 
-<%@page import="com.santander.app.properties.Props"%>
+<%@page import="com.infomg.app.properties.Props"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="tailer" uri="/WEB-INF/tlds/tailertld.tld"%>
 <!DOCTYPE html>

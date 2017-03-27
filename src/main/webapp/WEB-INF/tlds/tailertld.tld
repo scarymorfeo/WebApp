@@ -5,7 +5,7 @@
   <uri>/WEB-INF/tlds/tailertld</uri>
   <tag>
     <name>tail</name>
-    <tag-class>com.santander.app.admintools.tailLog.Tailer</tag-class>
+    <tag-class>com.infomg.app.admintools.tailLog.Tailer</tag-class>
     <body-content>empty</body-content>
     <attribute>
        <name>archivo</name>

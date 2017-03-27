@@ -22,11 +22,11 @@
   </context-param>
   <filter>
     <filter-name>adminToolsFilter</filter-name>
-    <filter-class>com.santander.app.admintools.filter.AdminToolsFilter</filter-class>
+    <filter-class>com.infomg.app.admintools.filter.AdminToolsFilter</filter-class>
   </filter>
   <filter>
     <filter-name>sessionFilter</filter-name>
-    <filter-class>com.santander.app.mvc.filter.SesionFilter</filter-class>
+    <filter-class>com.infomg.app.mvc.filter.SesionFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>sessionFilter</filter-name>
@@ -42,7 +42,7 @@
   </listener>
   <listener>
     <description>PropertiesLoader</description>
-    <listener-class>com.santander.app.properties.PropertiesLoader</listener-class>
+    <listener-class>com.infomg.app.properties.PropertiesLoader</listener-class>
   </listener>
   <servlet>
     <servlet-name>dispatcherServlet</servlet-name>
