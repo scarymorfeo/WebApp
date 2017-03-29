@@ -67,8 +67,10 @@
 
 									<thead>
 										<tr>
-											<th>Usuario</th>
+											<th>NumPer</th>
 											<th>Nombre</th>
+											<th>RFC</th>
+											<th>SCORE</th>
 										</tr>
 									</thead>
 

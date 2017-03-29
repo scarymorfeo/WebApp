@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>WebApp</title>
+        <title>Online Search IIR</title>
         <link href="${pageContext.request.contextPath}/resources/libs/bootstrap-th/css/bootstrap.min.css" rel="stylesheet">    
         <link href="${pageContext.request.contextPath}/resources/libs/bootstrap-th/css/main.css" rel="stylesheet">  
         <link href="${pageContext.request.contextPath}/resources/libs/bootstrap-th/css/animations.css" rel="stylesheet">         
@@ -17,7 +17,7 @@
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/libs/modernizr-2.6.2.min.js"></script>        
         <script type="text/javascript" src="${pageContext.request.contextPath}/resources/libs/bootstrap-th/js/bootstrap.min.js"></script>         
         
-		<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/resources/img/logo.png">
+		<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/resources/img/logoico.png">
         <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/autenticacion.js"></script>
     </head>
     <body>

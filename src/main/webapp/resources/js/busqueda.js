@@ -29,9 +29,13 @@ function handler() {
 	                "aaData" : data,
 	                "language" : dtLanguage,
 	                "columns" : [ {
-	                    "data" : "usuario"
+	                    "data" : "penumper"
 	                }, {
 	                    "data" : "nombre"
+	                }, {
+	                    "data" : "rfc"
+	                }, {
+	                    "data" : "score"
 	                }]
 	            })
 	        }		 
@@ -50,9 +54,13 @@ function initTabla() {
 	
 	var paramValue = $("#txtValor").val();
 	var columns = [ {
-		data : 'usuario'
+		data : 'penumper'
 	}, {
 		data : 'nombre'
+	}, {
+		data : 'rfc'
+	}, {
+		data : 'score'
 	} ];
 
 	tabla = $('#tabla-busqueda').DataTable({

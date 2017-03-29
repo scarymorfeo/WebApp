@@ -53,7 +53,7 @@
 
 
 	<dependencies>
-
+	
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>
@@ -359,8 +359,14 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.39</version>
 		</dependency>
-
-
+		
+		<dependency>
+					<groupId>ssa.ssase</groupId>
+					<artifactId>idssecl-iir</artifactId>
+					<version>1.0</version>
+					<scope>system</scope>
+					<systemPath>${project.basedir}/lib/idssecl.jar</systemPath> <!-- must match file name -->
+				</dependency>
 	</dependencies>
 
 

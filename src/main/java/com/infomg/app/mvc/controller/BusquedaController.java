@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.infomg.app.bean.RespuestaJsonBean;
 import com.infomg.app.bean.UsuarioApBean;
-import com.infomg.app.service.TestService;
+import com.infomg.app.service.BusquedaIIRService;
 import com.infomg.commons.exceptions.ServiceException;
 
 
@@ -37,7 +37,7 @@ public class BusquedaController extends BaseMultiActionController {
 	private static final Logger LOG = Logger.getLogger(BusquedaController.class);  
 	
 	@Autowired
-	TestService testService;
+	BusquedaIIRService busquedaIIRService;
 
 	
 	
@@ -85,7 +85,7 @@ public class BusquedaController extends BaseMultiActionController {
             try {
         	
             
-        	listaUsuarios = testService.getClientesIIR();
+        	listaUsuarios = busquedaIIRService.getClientesIIR(param);
         	
              
             respuesta.setLista(listaUsuarios);

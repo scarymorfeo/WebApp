@@ -16,8 +16,35 @@ public class UsuarioApBean {
     private String estado;
     private boolean seEnviaCorreo;
     private String tipoUsuario;
+    private String rfc;
+    private String penumper;
+    private int score;
 
-    public long getId() {
+    public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public String getPenumper() {
+		return penumper;
+	}
+
+	public void setPenumper(String penumper) {
+		this.penumper = penumper;
+	}
+
+	public String getRfc() {
+		return rfc;
+	}
+
+	public void setRfc(String rfc) {
+		this.rfc = rfc;
+	}
+
+	public long getId() {
         return id;
     }
 

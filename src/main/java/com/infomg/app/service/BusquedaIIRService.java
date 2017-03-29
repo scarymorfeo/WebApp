@@ -5,8 +5,8 @@ import java.util.List;
 import com.infomg.app.bean.UsuarioApBean;
 import com.infomg.commons.exceptions.ServiceException;
 
-public interface TestService {
+public interface BusquedaIIRService {
 
-	public List<UsuarioApBean> getClientesIIR() throws ServiceException;
+	public List<UsuarioApBean> getClientesIIR(String param) throws ServiceException;
 	
 }
