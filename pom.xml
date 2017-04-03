@@ -38,6 +38,12 @@
 					<configuration>
 						<!--webResources> <resource> <directory>lib</directory> <targetPath>WEB-INF/lib</targetPath> 
 							</resource> </webResources -->
+						<webResources>
+							<resource>
+								<directory>lib</directory>
+								<targetPath>WEB-INF/lib</targetPath>
+							</resource>
+						</webResources>							
 						<warSourceDirectory>src/main/webapp</warSourceDirectory>
 						<warName>WebApp</warName>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
@@ -365,7 +371,7 @@
 					<artifactId>idssecl-iir</artifactId>
 					<version>1.0</version>
 					<scope>system</scope>
-					<systemPath>${project.basedir}/lib/idssecl.jar</systemPath> <!-- must match file name -->
+					<systemPath>${basedir}/lib/idssecl.jar</systemPath> <!-- must match file name -->
 				</dependency>
 	</dependencies>
 
