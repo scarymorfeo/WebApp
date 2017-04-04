@@ -3,20 +3,6 @@
 	type="text/javascript"></script>
 <div id="box_wrap">
 
-	<section id="abovecontent" class="grey_section">
-		<div class="container">
-			<div class="row">
-				<div class="block col-sm-12">
-					<ul class="breadcrumb">
-						<li><a href="#" class="pathway">Home</a></li>
-						<li><span>Busqueda</span></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
 	<section id="middle" class="">
 
 		<div class="container">
