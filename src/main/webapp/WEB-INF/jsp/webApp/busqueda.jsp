@@ -37,12 +37,19 @@
 
 							<div class="row">
 								<div class="col-sm-12">
-									<div class="contact-form">
-										<p class="contact-form-name">
-											<label for="name">Valor <span class="required">*</span></label>
+									<div>
+										<p>
+											<label for="txtValor">Nombre Completo:<span class="required">*</span></label>
 											<input type="text" aria-required="true" size="30" value=""
 												name="txtValor" id="txtValor" class="form-control">
 										</p>
+
+										<p>
+											<label for="txtValorRfc">RFC:<span class="required">*</span></label>
+										    <input type="text" aria-required="true" size="13" value=""
+												name="txtValorRfc" id="txtValorRfc" class="form-control">
+										</p>
+
 
 										<p class="contact-form-submit text-center vertical-margin-20">
 											

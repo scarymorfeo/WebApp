@@ -7,6 +7,6 @@ import com.infomg.commons.exceptions.ServiceException;
 
 public interface BusquedaIIRService {
 
-	public List<UsuarioApBean> getClientesIIR(String param) throws ServiceException;
+	public List<UsuarioApBean> getClientesIIR(String param,String param2) throws ServiceException;
 	
 }

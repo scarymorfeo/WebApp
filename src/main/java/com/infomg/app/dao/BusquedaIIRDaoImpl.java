@@ -31,10 +31,10 @@ public class BusquedaIIRDaoImpl implements BusquedaIIRDao{
 	private static final String	prog = "xxxxxxxxxx";
 	
 	@Override
-	public List<UsuarioApBean> getListaClientes(String param)throws DAOException{
+	public List<UsuarioApBean> getListaClientes(String param,String param2)throws DAOException{
 		String args []= {"-hlocalhost:1666","-rodb:0:SSA_TGT/SSA_TGT00@IIR"};
 		
-	List<UsuarioApBean> listaUsuarios =  SearchIIRClien(args,param);
+	List<UsuarioApBean> listaUsuarios =  SearchIIRClien(args,param,param2);
 	
 //        UsuarioApBean usr = new UsuarioApBean();
 //
@@ -52,7 +52,7 @@ public class BusquedaIIRDaoImpl implements BusquedaIIRDao{
 	
 	public
 	List<UsuarioApBean> SearchIIRClien (
-		String[]	args, String param)
+		String[]	args, String param, String param2)
 	{
 		byte[][]	parameters;
 		int[]		datalen;
@@ -62,6 +62,7 @@ public class BusquedaIIRDaoImpl implements BusquedaIIRDao{
 		int[]		sreps;
 		int[]		freps;
 		List<UsuarioApBean> listaUsuarios = new ArrayList<UsuarioApBean>();
+		String recStr =null;
 		
 
 		datalen = new int[1];
@@ -78,9 +79,12 @@ public class BusquedaIIRDaoImpl implements BusquedaIIRDao{
 
 	/* Construct parameters for the search
 	*/
+//		param="TRINIDAD";
+		String nameParam = String.format("%1$-100s",param);
+		String rfcParam = String.format("%1$-100s",param2);
 		parameters = new byte[3][];
-		parameters[0] = "TRINIDAD                                                                                            ".getBytes();
-		parameters[1] = "PIAT830207BU4                                                                                       ".getBytes();                 
+		parameters[0] = nameParam.getBytes();
+		parameters[1] = rfcParam.getBytes();                 
 		parameters[2] = "                                                                                                    ".getBytes();                 
 
 	/* Connect to the Search Server
@@ -120,13 +124,13 @@ public class BusquedaIIRDaoImpl implements BusquedaIIRDao{
 					System.out.println (prog +
 						"> IDT_Record = '"
 						+ new String (rec) + "'");
-
+					recStr = new String (rec);
 					System.out.println (prog + "> Score = " +
 						score[0]);
 					usr = new UsuarioApBean();
-					usr.setPenumper(rec.toString().substring(1,8));
-					usr.setNombre(rec.toString().substring(1,8));
-					usr.setRfc(rec.toString().substring(1,8));
+					usr.setPenumper(recStr.substring(0,8));
+					usr.setRfc(recStr.substring(8,21));
+					usr.setNombre(recStr.substring(21,121));
 					usr.setScore(score[0]);
 					listaUsuarios.add(usr);
 				}

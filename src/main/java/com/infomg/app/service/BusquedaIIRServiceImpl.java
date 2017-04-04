@@ -18,11 +18,11 @@ public class BusquedaIIRServiceImpl implements BusquedaIIRService {
 	BusquedaIIRDao busquedaIIRDao;
 	
 	@Override
-	public List<UsuarioApBean> getClientesIIR(String param) throws ServiceException{
+	public List<UsuarioApBean> getClientesIIR(String param,String param2) throws ServiceException{
 		
 		List<UsuarioApBean> listaUsuarios =null;
 		try {
-			listaUsuarios = busquedaIIRDao.getListaClientes("");
+			listaUsuarios = busquedaIIRDao.getListaClientes(param,param2);
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

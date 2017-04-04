@@ -8,17 +8,24 @@ function handler() {
 	
 	$("#btnBuscar").click(function() {
 		 var paramValue = $("#txtValor").val();
+		 var paramValue2 = $("#txtValorRfc").val();
 		 
 		 $.ajax({
 	            url : 'consultarBusqueda.json',
 	            type : 'GET',
 	            dataType : 'json',
 	            data:{
-	            	param:paramValue
+	            	param:paramValue,param2:paramValue2
 	            },
 	            success : function(respuesta) {
+	            	
+	            	if (respuesta.lista.length === 0 ){
+	            		tabla.clear().draw();
+	            	}else {     	
+	            	
 	            	tabla.destroy();
 	                assignToEventsColumns(respuesta.lista);
+	            	}
 	            }
 	        });
 
@@ -53,6 +60,7 @@ var tabla;
 function initTabla() {
 	
 	var paramValue = $("#txtValor").val();
+	var paramValue2 = $("#txtValorRfc").val();
 	var columns = [ {
 		data : 'penumper'
 	}, {

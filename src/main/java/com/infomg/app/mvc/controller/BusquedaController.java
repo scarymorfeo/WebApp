@@ -69,8 +69,11 @@ public class BusquedaController extends BaseMultiActionController {
 		JSONObject jsonObj = requestParamsToJSON(request);
 		
 		String param = null;
+		String param2 = null;
+		
 		try{
 		    param = jsonObj.getString("param");
+		    param2 = jsonObj.getString("param2");
 		}catch (JSONException ex){
 			param = null;
 			
@@ -85,7 +88,7 @@ public class BusquedaController extends BaseMultiActionController {
             try {
         	
             
-        	listaUsuarios = busquedaIIRService.getClientesIIR(param);
+        	listaUsuarios = busquedaIIRService.getClientesIIR(param,param2);
         	
              
             respuesta.setLista(listaUsuarios);

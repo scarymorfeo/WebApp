@@ -9,6 +9,6 @@ import com.infomg.commons.exceptions.DAOException;
 
 public interface BusquedaIIRDao {
 	
-	public List<UsuarioApBean> getListaClientes(String param) throws DAOException;
+	public List<UsuarioApBean> getListaClientes(String param,String param2) throws DAOException;
 	
 }
