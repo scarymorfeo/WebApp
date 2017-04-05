@@ -39,7 +39,7 @@ public class BusquedaController extends BaseMultiActionController {
 	@Autowired
 	BusquedaIIRService busquedaIIRService;
 
-	
+	private int increment= 1; 
 	
     @RequestMapping(value = "/busqueda.htm",method = RequestMethod.GET)
     public String pantalla0(){
@@ -71,34 +71,91 @@ public class BusquedaController extends BaseMultiActionController {
 		String param = null;
 		String param2 = null;
 		
+		int flag = 0;
+		
 		try{
 		    param = jsonObj.getString("param");
 		    param2 = jsonObj.getString("param2");
+		    
+		    if(param.equals("") &&  param2.equals("")){
+		    	flag = 1;
+		    	
+		    }else{
+		    	flag = 2;
+		    }
+		    
 		}catch (JSONException ex){
-			param = null;
+			flag = 0;
 			
 		}        
         
-        if(param == null){
+        if(flag == 2){
+        	
+    		/*
+        	
+	        try {
+	        	
+	            
+	        	listaUsuarios = busquedaIIRService.getClientesIIR(param,param2);
+	        	
+	             
+	            respuesta.setLista(listaUsuarios);
+	        respuesta.setEstatus("ok");
+	        respuesta.setMensaje("Consulta realizada correctamente");
+
+	
+	        } catch (ServiceException se) {
+	        
+		        LOG.error("Error al obtener Bitacora: " + se.getMessage() + " " + se.toString());
+	        	listaUsuarios = new ArrayList<UsuarioApBean>();
+	            respuesta.setLista(listaUsuarios);
+	            respuesta.setEstatus("error");
+	            respuesta.setMensaje(se.getMessage());            
+	        
+	        } */
+    	
+	        UsuarioApBean usr = new UsuarioApBean();
+	        UsuarioApBean usr2 = new UsuarioApBean();
+	        UsuarioApBean usr3 = new UsuarioApBean();
+	        
+	        usr.setPenumper("penumper 1");
+	        usr.setNombre("user 1");
+	        usr.setRfc("RFC 1");
+	        usr.setScore(2*increment);
+	 
+	        usr2.setPenumper("penumper 2");
+	        usr2.setNombre("user 2");
+	        usr2.setRfc("RFC 2");
+	        usr2.setScore(4*increment);
+	        
+	        usr3.setPenumper("penumper 3");
+	        usr3.setNombre("user 3");
+	        usr3.setRfc("RFC 3");
+	        usr3.setScore(8*increment);
+	        
+	        listaUsuarios.add(usr);
+	        listaUsuarios.add(usr2);
+	        listaUsuarios.add(usr3);   
+	        
+	        increment++;
+	        
+	        respuesta.setLista(listaUsuarios);
+	        respuesta.setEstatus("ok");
+	        respuesta.setMensaje("Consulta realizada correctamente");
+        	
+        }else if (flag == 1){
+        	
         	listaUsuarios = new ArrayList<UsuarioApBean>();
             respuesta.setLista(listaUsuarios);
             respuesta.setEstatus("ok");
-        }else{
+            respuesta.setMensaje("Sin parametros iniciales");            
         	
-            try {
         	
-            
-        	listaUsuarios = busquedaIIRService.getClientesIIR(param,param2);
-        	
-             
+        }else {
+        	listaUsuarios = new ArrayList<UsuarioApBean>();
             respuesta.setLista(listaUsuarios);
-            respuesta.setEstatus("ok");
-
-        } catch (ServiceException se) {
-        	LOG.error("Error al obtener Bitacora: " + se.getMessage() + " " + se.toString());
             respuesta.setEstatus("error");
-            respuesta.setMensaje(se.getMessage());
-        }       	
+            respuesta.setMensaje("Mensaje de error desde el servidor propaga excepcion");            
         	
         }
 		

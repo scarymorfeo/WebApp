@@ -1,5 +1,5 @@
 var DelayMessage=2000;
-var zIndex = 9999;
+var zIndex = 999999;
 /**
  * Objeto que construye un objeto que muestra mensajes  de cualquier tipo
  * @type devuelve un objeto que contiene una instancia para el mostrado de notificaciones.

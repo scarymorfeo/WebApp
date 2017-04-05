@@ -147,8 +147,8 @@ section#progress  {padding-top: 100px; padding-bottom: 68px;}
 section#portfolio {padding: 86px 0 0; border-bottom: 0;}
 section#belowcontent {padding: 49px 0 50px;}
 section#info  {padding-top: 82px; padding-bottom: 88px;}
-section#middle  {padding-top: 32px; padding-bottom: 89px;}
-section#middle .row + .row {margin-top: 40px;}
+section#middle  {padding-top: 24px; padding-bottom: 60px;}
+section#middle .row + .row {margin-top: 12px;}
 footer#footer {padding-top: 50px; padding-bottom: 40px; }
 section#map_wrap {padding: 0;}
 section#mainslider {}

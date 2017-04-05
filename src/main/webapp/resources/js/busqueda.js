@@ -1,3 +1,6 @@
+
+var tabla;
+
 $(document).ready(function() {
 	handler();
 	//alert("xxxxxxxxxxxxxxxxx");
@@ -7,60 +10,15 @@ $(document).ready(function() {
 function handler() {
 	
 	$("#btnBuscar").click(function() {
-		 var paramValue = $("#txtValor").val();
-		 var paramValue2 = $("#txtValorRfc").val();
-		 
-		 $.ajax({
-	            url : 'consultarBusqueda.json',
-	            type : 'GET',
-	            dataType : 'json',
-	            data:{
-	            	param:paramValue,param2:paramValue2
-	            },
-	            success : function(respuesta) {
-	            	
-	            	if (respuesta.lista.length === 0 ){
-	            		tabla.clear().draw();
-	            	}else {     	
-	            	
-	            	tabla.destroy();
-	                assignToEventsColumns(respuesta.lista);
-	            	}
-	            }
-	        });
-
-	        function assignToEventsColumns(data) {
-	            tabla = $('#tabla-busqueda').dataTable({
-	                "bAutoWidth" : false,
-	                "processing" : true,
-	                "aaData" : data,
-	                "language" : dtLanguage,
-	                "columns" : [ {
-	                    "data" : "penumper"
-	                }, {
-	                    "data" : "nombre"
-	                }, {
-	                    "data" : "rfc"
-	                }, {
-	                    "data" : "score"
-	                }]
-	            })
-	        }		 
-		 
-		 
-		 
-		 
-		
+		tabla.ajax.reload();
 	});	
 	
 	initTabla();
 }
 
-var tabla;
+
 function initTabla() {
 	
-	var paramValue = $("#txtValor").val();
-	var paramValue2 = $("#txtValorRfc").val();
 	var columns = [ {
 		data : 'penumper'
 	}, {
@@ -75,10 +33,64 @@ function initTabla() {
         "processing" : true,
         "ajax" : {
             "url" : "consultarBusqueda.json",
-            dataSrc : 'lista'
+            "dataSrc": function (json){
+                if(json.estatus == "ok"){
+                	Messages.messageOk(json.mensaje);
+                    
+                }else{
+                	Messages.messageError(json.mensaje);
+                }
+                
+                return json.lista;
+            },          
+            "data": function ( d ) {
+                return $.extend( {}, d, {
+                  "param": $("#txtValor").val(),
+                  "param2": $("#txtValorRfc").val()
+                } );
+             }, 
+             "error": function (xhr, error, thrown) {
+            	 
+            	 alert( 'Error al inicializar la tabla' );
+             }
+            	
         },
         "language" : dtLanguage,
         "columns" : columns
     });
+	
+	
+	function callB (response){
+		console.info("exitoso");
+	}
+	
+	/*tabla = $('#tabla-busqueda').dataTable( {
+		    "bProcessing": true,
+		    "bServerSide": true,
+		    "sAjaxSource": "consultarBusqueda.json",
+	        "language" : dtLanguage,
+	        "columns" : columns,		
+	        "fnServerParams": function (aoData) {
+	        	aoData.push({
+	        	"name": "param",
+	        	"value": $("#txtValor").val()
+	        	})
+	        	aoData.push({
+	        	"name": "param2",
+	        	"value": $("#txtValorRfc").val()
+	        	})
+
+	        	},	        
+		    "fnServerData": function ( sSource, aoData, callB, oSettings ) {
+		      oSettings.jqXHR = $.ajax( {
+		        "dataType": 'json',
+		        "type": "GET",
+		        "dataSrc" : 'lista',
+		        "url": sSource,
+		        "data": aoData,
+		        "success": callB
+		      } );
+		    }
+	} );*/	
 
 }
